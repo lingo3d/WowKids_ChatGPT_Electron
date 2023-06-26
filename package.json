@@ -1,15 +1,44 @@
 {
-  "name": "my-electron-app",
-  "version": "1.0.0",
-  "description": "",
+  "name": "chatbot",
+  "version": "0.1.0",
+  "description": "chatbot used gor",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "electron": "^24.3.0"
+  "build": {
+    "appId": "com.chatbot.id",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./build/icon.ico",
+      "uninstallerIcon": "./build/icon.ico",
+      "installerHeaderIcon": "./build/icon.ico",
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "chatbot"
+    }
+  },
+  "devDependencies": {
+    "electron": "^24.3.0",
+    "electron-builder": "^22.0.0",
+    "electron-packager": "^17.1.1"
   }
 }
