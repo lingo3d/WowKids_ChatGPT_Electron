@@ -4,7 +4,8 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 1024,
     height: 800,
-    icon: './logo.png',
+    icon: './logo_new.png',
+    fullscreen: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true
